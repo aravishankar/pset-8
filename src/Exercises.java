@@ -1,11 +1,29 @@
 public class Exercises {
 
+	public static void main(String[] args) {
+		
+			
+	}
+
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
-			return false;
+			return false; 
 		}
 		
 		// write your code here
+
+		lastIndexA = a.length;
+		lastIndexB = b.length;
+
+		if (a[0] == b[0]) {
+			return true;
+			System.out.println("true");
+		} else if (a[lastIndexA-1] == b[lastIndexB-1]) {
+			return true;
+			System.out.println("true");
+		} else {
+			return false;
+		}
 		
 		return false;	// default return value to ensure compilation
 	}
