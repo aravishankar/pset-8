@@ -56,8 +56,27 @@ public class Exercises {
 	
 	public int difference(int[] numbers) {
 		// write your code here
+		if (numbers == null || numbers.length < 1) {
+			return -1;
+		}
+
+		int largest = numbers[0];
+		int smallest = numbers[0];
+
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] > largest) {
+				largest = numbers[i];
+			}
+
+			if (numbers[i] < smallest) {
+				smallest = numbers[i];
+			}
+		}
+
+		int difference = largest - smallest;
+		return difference;
 		
-		return -1;		// default return value to ensure compilation
+		// return -1;		// default return value to ensure compilation
 	}
 	
 	public double biggest(double[] numbers) {
