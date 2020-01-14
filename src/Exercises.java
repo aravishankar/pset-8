@@ -5,6 +5,7 @@ public class Exercises {
 			
 	// }
 
+	//this works!
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
 			return false; 
@@ -28,8 +29,29 @@ public class Exercises {
 	
 	public String[] endsMeet(String[] values, int n) {
 		// write your code here
+
+		String empty[] = new String[0];
+
+		if (values == null || values.length < n || n < 0) {
+			return empty; 
+		}
+
+		String result[] = new String[n*2];
+		int length = values.length;
+
+		for (int i = 0; i < n; i++) {
+			result[i] = values[i];
+		}
+
+		int index = n;
+		for (int j = n; j < 2*n; j++) {
+			result[j] = values[length-index];
+			index--;
+		}
+
+		return result;
 		
-		return null;	// default return value to ensure compilation
+		// return null;	// default return value to ensure compilation
 	}
 	
 	public int difference(int[] numbers) {
