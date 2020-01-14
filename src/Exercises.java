@@ -54,6 +54,7 @@ public class Exercises {
 		// return null;	// default return value to ensure compilation
 	}
 	
+	//Does not return undefined
 	public int difference(int[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 1) {
@@ -81,8 +82,35 @@ public class Exercises {
 	
 	public double biggest(double[] numbers) {
 		// write your code here
+		if (numbers == null || numbers.length < 3 || numbers.length%2 == 0) {
+			return -1;
+		}
+
+		boolean noNegatives = true;
+		for (int i = 0; i < numbers.length; i++) {
+			if (numbers[i] < 0) {
+				noNegatives = false;
+			}
+		}
+		if (!noNegatives) {
+			return -1;
+		}
+
+		double largest = numbers[0];
+		int middleIndex = numbers.length / 2 + 1;
+		int finalIndex = numbers.length-1;
 		
-		return -1;		// default return value to ensure compilation
+		if (numbers[middleIndex] > largest) {
+			largest = numbers[middleIndex];
+		}
+		if (numbers[finalIndex] > largest) {
+			largest = numbers[finalIndex];
+		}
+
+		return largest;
+
+		
+		// return -1;		// default return value to ensure compilation
 	}
 	
 	public String[] middle(String[] values) {
