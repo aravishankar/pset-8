@@ -1,9 +1,9 @@
 public class Exercises {
 
-	public static void main(String[] args) {
+	// public static void main(String[] args) {
 		
 			
-	}
+	// }
 
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
