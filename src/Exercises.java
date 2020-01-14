@@ -12,20 +12,18 @@ public class Exercises {
 		
 		// write your code here
 
-		lastIndexA = a.length;
-		lastIndexB = b.length;
+		int lastIndexA = a.length;
+		int lastIndexB = b.length;
 
 		if (a[0] == b[0]) {
 			return true;
-			System.out.println("true");
 		} else if (a[lastIndexA-1] == b[lastIndexB-1]) {
 			return true;
-			System.out.println("true");
 		} else {
 			return false;
 		}
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public String[] endsMeet(String[] values, int n) {
