@@ -97,7 +97,7 @@ public class Exercises {
 		}
 
 		double largest = numbers[0];
-		int middleIndex = numbers.length / 2 + 1;
+		int middleIndex = numbers.length / 2;
 		int finalIndex = numbers.length-1;
 		
 		if (numbers[middleIndex] > largest) {
@@ -115,8 +115,30 @@ public class Exercises {
 	
 	public String[] middle(String[] values) {
 		// write your code here
+		String empty[] = new String[0];
+		if (values == null || values.length < 3 || values.length%2 == 0) {
+			return empty;
+		}
 		
-		return null;	// default return value to ensure compilation
+		boolean containsNull = false;
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] == null) {
+				containsNull = true;
+			}
+		}
+		if (containsNull) {
+			return empty;
+		}
+
+		int middleIndex = values.length / 2;
+		int firstIndex = middleIndex - 1;
+		int lastIndex = middleIndex + 1;
+
+		String[] result = {values[firstIndex], values[middleIndex], values[lastIndex]};
+
+		return result;
+
+		// return null;	// default return value to ensure compilation
 	}
 
 	public boolean increasing(int[] numbers) {
