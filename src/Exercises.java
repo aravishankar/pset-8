@@ -172,8 +172,20 @@ public class Exercises {
 	
 	public boolean everywhere(int[] numbers, int x) {
 		// write your code here
+		if (values == null || values.length < 1) {
+			return false;
+		}
+
+		boolean isEverywhere = true;
+		for (int i = 0; i < values.length; i++) {
+			if (numbers[i] != x) {
+				isEverywhere = false;
+			}
+		}
+
+		return isEverywhere;
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public boolean consecutive(int[] numbers) {
