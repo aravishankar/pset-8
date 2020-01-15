@@ -143,8 +143,31 @@ public class Exercises {
 
 	public boolean increasing(int[] numbers) {
 		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		int lowestNum = numbers[0];
+		int middleNum = numbers[1];
+		int finalNum = numbers[2];
+
+		for (int i = 0; i < numbers.length; i++) {
+			if (lowestNum < middleNum && middleNum < finalNum) {
+				return true;
+			}
+
+			if (i + 2 < numbers.length) {
+				lowestNum = numbers[i];
+				midddleNum = numbers[i + 1];
+				finalNum = numbers[i + 2];
+			} else {
+				return false;
+			}
+
+		}
+
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public boolean everywhere(int[] numbers, int x) {
