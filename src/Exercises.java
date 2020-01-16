@@ -215,7 +215,6 @@ public class Exercises {
 		// return false;	// default return value to ensure compilation
 	}
 
-	//this works
 	public boolean consecutive(int[] numbers) {
 		// write your code here
 
@@ -237,7 +236,6 @@ public class Exercises {
 		// return false;	// default return value to ensure compilation
 	}
 	
-	//this works
 	public boolean balance(int[] numbers) {
 		// write your code here
 
