@@ -7,12 +7,13 @@ public class Exercises {
 		
 		// write your code here
 
+		//finds endpoints
 		int lastIndexA = a.length;
 		int lastIndexB = b.length;
 
-		if (a[0] == b[0]) {
+		if (a[0] == b[0]) { //compares first value
 			return true;
-		} else if (a[lastIndexA-1] == b[lastIndexB-1]) {
+		} else if (a[lastIndexA-1] == b[lastIndexB-1]) { //compares last value
 			return true;
 		} else {
 			return false;
@@ -24,20 +25,24 @@ public class Exercises {
 	public String[] endsMeet(String[] values, int n) {
 		// write your code here
 
-		String empty[] = new String[0];
+		String empty[] = new String[0]; //empty string to return
 
+		//check that conditions are met
 		if (values == null || values.length < n || n < 0) {
 			return empty; 
 		}
 
+		//initialize output array + other things
 		String result[] = new String[n*2];
 		int length = values.length;
+		int index = n;
 
+		//append first n elements
 		for (int i = 0; i < n; i++) {
 			result[i] = values[i];
 		}
 
-		int index = n;
+		//append last n elements
 		for (int j = n; j < 2*n; j++) {
 			result[j] = values[length-index];
 			index--;
@@ -50,13 +55,17 @@ public class Exercises {
 	
 	public int difference(int[] numbers) {
 		// write your code here
+
+		//check that conditions are met
 		if (numbers == null || numbers.length < 1) {
 			return -1;
 		}
 
+		//initialize net largest and net smallest vars
 		int largest = numbers[0];
 		int smallest = numbers[0];
 
+		//goes through values, replaces largest or smallest as needed
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] > largest) {
 				largest = numbers[i];
@@ -66,19 +75,22 @@ public class Exercises {
 			}
 		}
 
+		//compute and return difference
 		int difference = largest - smallest;
 		return difference;
 		
 		// return -1;		// default return value to ensure compilation
 	}
 
-	//this works
 	public double biggest(double[] numbers) {
 		// write your code here
+
+		//check that conditions are met
 		if (numbers == null || numbers.length < 3 || numbers.length%2 == 0) {
 			return -1;
 		}
 
+		//check that no negatives condition is met 
 		boolean noNegatives = true;
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] < 0) {
@@ -89,10 +101,12 @@ public class Exercises {
 			return -1;
 		}
 
+		//initialize variables
 		double largest = numbers[0];
 		int middleIndex = numbers.length / 2;
 		int finalIndex = numbers.length-1;
 		
+		//finds if middle or final numbers are largest
 		if (numbers[middleIndex] > largest) {
 			largest = numbers[middleIndex];
 		}
@@ -105,14 +119,17 @@ public class Exercises {
 		// return -1;		// default return value to ensure compilation
 	}
 	
-	//what is this grader on
 	public String[] middle(String[] values) {
 		// write your code here
-		String empty[] = new String[0];
+
+		String empty[] = new String[0];  //empty string to return
+
+		//check that conditions are met
 		if (values == null || values.length < 3 || values.length%2 == 0) {
 			return empty;
 		}
 		
+		//check that no null condition is met
 		boolean containsNull = false;
 		for (int i = 0; i < values.length; i++) {
 			if (values[i] == null) {
@@ -123,6 +140,7 @@ public class Exercises {
 			return empty;
 		}
 
+		//finds middle 3 elements
 		int middleIndex = values.length / 2;
 		int firstIndex = middleIndex - 1;
 		int lastIndex = middleIndex + 1;
@@ -134,17 +152,20 @@ public class Exercises {
 		// return null;	// default return value to ensure compilation
 	}
 
-	//this works
 	public boolean increasing(int[] numbers) {
 		// write your code here
+
+		//checks that conditions are met
 		if (numbers == null || numbers.length < 3) {
 			return false;
 		}
 
+		//initialize sequence vars
 		int lowestNum = numbers[0];
 		int middleNum = numbers[1];
 		int finalNum = numbers[2];
 
+		//iterates through array for increasing sequences
 		for (int i = 0; i < numbers.length; i++) {
 			if (lowestNum < middleNum && middleNum < finalNum) {
 				return true;
@@ -163,15 +184,16 @@ public class Exercises {
 		return false;	// default return value to ensure compilation
 	}
 	
-	//does this work?  I don't know
 	public boolean everywhere(int[] numbers, int x) {
 		// write your code here
+
+		//checks that conditions are met
 		if (numbers == null || numbers.length < 1) {
 			return false;
 		}
 
+		//calculates if everywhere condition is met
 		boolean isEverywhere = true;
-
 		for (int i = 0; i < numbers.length; i++) {
 			if (i == 0) {
 				if (numbers[i] != x && numbers[i+1] != x) {
@@ -196,10 +218,13 @@ public class Exercises {
 	//this works
 	public boolean consecutive(int[] numbers) {
 		// write your code here
+
+		//checks that conditions are met
 		if (numbers == null || numbers.length < 3) {
 			return false;
 		}
 
+		//verifies if sequence of 3 or more even/odd numbers are present
 		boolean isConsecutive = false;
 		for (int i = 2; i < numbers.length; i++) {
 			if (numbers[i] % 2 == numbers[i-1] % 2 && numbers[i] % 2 == numbers[i-2] % 2) {
@@ -215,10 +240,13 @@ public class Exercises {
 	//this works
 	public boolean balance(int[] numbers) {
 		// write your code here
+
+		//checks that conditions are met
 		if (numbers == null || numbers.length < 2) {
 			return false;
 		}
 
+		//verifies if balancing condition is met
 		for (int i = 0; i < numbers.length; i++) {
 			int firstSum = 0;
 			int secondSum = 0;
@@ -236,13 +264,15 @@ public class Exercises {
 		return false;	// default return value to ensure compilation
 	}
 	
-	//this works
 	public int clumps(String[] values) {
 		// write your code here
+
+		//checks if conditions are met
 		if (values == null) {
 			return -1;
 		}
 
+		//checks if no null condition is met
 		boolean containsNull = false;
 		for (int i = 0; i < values.length; i++) {
 			if (values[i] == null) {
@@ -253,6 +283,7 @@ public class Exercises {
 			return -1;
 		}
 
+		//find clumps and tally them
 		boolean isClump = false;
 		int clumpCount = 0;
 
