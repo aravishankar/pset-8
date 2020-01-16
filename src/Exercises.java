@@ -1,11 +1,5 @@
 public class Exercises {
 
-	// public static void main(String[] args) {
-		
-			
-	// }
-
-	//this works
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
 			return false; 
@@ -27,7 +21,6 @@ public class Exercises {
 		// return false;	// default return value to ensure compilation
 	}
 	
-	//this works
 	public String[] endsMeet(String[] values, int n) {
 		// write your code here
 
@@ -55,11 +48,10 @@ public class Exercises {
 		// return null;	// default return value to ensure compilation
 	}
 	
-	//Does not return undefined, otherwise works
 	public int difference(int[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 1) {
-			return -1; //wtf is undefined
+			return -1;
 		}
 
 		int largest = numbers[0];
@@ -69,7 +61,6 @@ public class Exercises {
 			if (numbers[i] > largest) {
 				largest = numbers[i];
 			}
-
 			if (numbers[i] < smallest) {
 				smallest = numbers[i];
 			}
@@ -111,7 +102,6 @@ public class Exercises {
 
 		return largest;
 
-		
 		// return -1;		// default return value to ensure compilation
 	}
 	
@@ -169,7 +159,6 @@ public class Exercises {
 			}
 
 		}
-
 		
 		return false;	// default return value to ensure compilation
 	}
@@ -182,11 +171,6 @@ public class Exercises {
 		}
 
 		boolean isEverywhere = true;
-		// for (int i = 1; i < numbers.length-1; i++) {
-		// 	if (numbers[i-1] != x && numbers[i] != x && numbers[i+1] != x) {
-		// 		isEverywhere = false;
-		// 	}
-		// }
 
 		for (int i = 0; i < numbers.length; i++) {
 			if (i == 0) {
@@ -248,8 +232,6 @@ public class Exercises {
 				return true;
 			}
 		}
-		
-
 		
 		return false;	// default return value to ensure compilation
 	}
