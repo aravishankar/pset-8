@@ -115,7 +115,7 @@ public class Exercises {
 		// return -1;		// default return value to ensure compilation
 	}
 	
-	//wtf is this grader bullshit on
+	//what is this grader on
 	public String[] middle(String[] values) {
 		// write your code here
 		String empty[] = new String[0];
