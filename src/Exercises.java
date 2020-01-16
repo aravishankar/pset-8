@@ -228,6 +228,7 @@ public class Exercises {
 		// return false;	// default return value to ensure compilation
 	}
 	
+	//this works
 	public boolean balance(int[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 2) {
@@ -253,9 +254,39 @@ public class Exercises {
 		return false;	// default return value to ensure compilation
 	}
 	
+	//this works
 	public int clumps(String[] values) {
 		// write your code here
+		if (values == null) {
+			return -1;
+		}
+
+		boolean containsNull = false;
+		for (int i = 0; i < values.length; i++) {
+			if (values[i] == null) {
+				containsNull = true;
+			}
+		}
+		if (containsNull) {
+			return -1;
+		}
+
+		boolean isClump = false;
+		int clumpCount = 0;
+
+		for (int i = 1; i < values.length; i++) {
+			if (values[i].equals(values[i-1])) {
+				if (!isClump) {
+					clumpCount++;
+				}
+				isClump = true;
+			} else {
+				isClump = false;
+			}
+		}
+
+		return clumpCount;
 		
-		return -1;		// default return value to ensure compilation
+		// return -1;		// default return value to ensure compilation
 	}
 }
