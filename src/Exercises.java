@@ -5,7 +5,7 @@ public class Exercises {
 			
 	// }
 
-	//this works!
+	//this works
 	public boolean commonEnd(int[] a, int[] b) {
 		if (a == null || a.length == 0 || b == null || b.length == 0) {
 			return false; 
@@ -27,6 +27,7 @@ public class Exercises {
 		// return false;	// default return value to ensure compilation
 	}
 	
+	//this works
 	public String[] endsMeet(String[] values, int n) {
 		// write your code here
 
@@ -54,11 +55,11 @@ public class Exercises {
 		// return null;	// default return value to ensure compilation
 	}
 	
-	//Does not return undefined
+	//Does not return undefined, otherwise works
 	public int difference(int[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 1) {
-			return -1;
+			return -1; //wtf is undefined
 		}
 
 		int largest = numbers[0];
@@ -79,7 +80,8 @@ public class Exercises {
 		
 		// return -1;		// default return value to ensure compilation
 	}
-	
+
+	//this works
 	public double biggest(double[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 3 || numbers.length%2 == 0) {
@@ -113,6 +115,7 @@ public class Exercises {
 		// return -1;		// default return value to ensure compilation
 	}
 	
+	//wtf is this grader bullshit on
 	public String[] middle(String[] values) {
 		// write your code here
 		String empty[] = new String[0];
@@ -141,6 +144,7 @@ public class Exercises {
 		// return null;	// default return value to ensure compilation
 	}
 
+	//this works
 	public boolean increasing(int[] numbers) {
 		// write your code here
 		if (numbers == null || numbers.length < 3) {
@@ -158,7 +162,7 @@ public class Exercises {
 
 			if (i + 2 < numbers.length) {
 				lowestNum = numbers[i];
-				midddleNum = numbers[i + 1];
+				middleNum = numbers[i + 1];
 				finalNum = numbers[i + 2];
 			} else {
 				return false;
@@ -167,19 +171,36 @@ public class Exercises {
 		}
 
 		
-		// return false;	// default return value to ensure compilation
+		return false;	// default return value to ensure compilation
 	}
 	
+	//does this work?  I don't know
 	public boolean everywhere(int[] numbers, int x) {
 		// write your code here
-		if (values == null || values.length < 1) {
+		if (numbers == null || numbers.length < 1) {
 			return false;
 		}
 
 		boolean isEverywhere = true;
-		for (int i = 0; i < values.length; i++) {
-			if (numbers[i] != x) {
-				isEverywhere = false;
+		// for (int i = 1; i < numbers.length-1; i++) {
+		// 	if (numbers[i-1] != x && numbers[i] != x && numbers[i+1] != x) {
+		// 		isEverywhere = false;
+		// 	}
+		// }
+
+		for (int i = 0; i < numbers.length; i++) {
+			if (i == 0) {
+				if (numbers[i] != x && numbers[i+1] != x) {
+					isEverywhere = false;
+				}
+			} else if (i == numbers.length - 1) {
+				if (numbers[i] != x && numbers[i-1] != x) {
+					isEverywhere = false;
+				}
+			} else {
+				if (numbers[i-1] != x && numbers[i] != x && numbers[i+1] != x) {
+					isEverywhere = false;
+				}
 			}
 		}
 
@@ -187,15 +208,47 @@ public class Exercises {
 		
 		// return false;	// default return value to ensure compilation
 	}
-	
+
+	//this works
 	public boolean consecutive(int[] numbers) {
 		// write your code here
+		if (numbers == null || numbers.length < 3) {
+			return false;
+		}
+
+		boolean isConsecutive = false;
+		for (int i = 2; i < numbers.length; i++) {
+			if (numbers[i] % 2 == numbers[i-1] % 2 && numbers[i] % 2 == numbers[i-2] % 2) {
+				isConsecutive = true;
+			}
+		}
+
+		return isConsecutive;
 		
-		return false;	// default return value to ensure compilation
+		// return false;	// default return value to ensure compilation
 	}
 	
 	public boolean balance(int[] numbers) {
 		// write your code here
+		if (numbers == null || numbers.length < 2) {
+			return false;
+		}
+
+		for (int i = 0; i < numbers.length; i++) {
+			int firstSum = 0;
+			int secondSum = 0;
+			for (int j = 0; j < i; j++) {
+				firstSum += numbers[j];
+			}
+			for (int k = i; k < numbers.length; k++) {
+				secondSum += numbers[k];
+			}
+			if (firstSum == secondSum) {
+				return true;
+			}
+		}
+		
+
 		
 		return false;	// default return value to ensure compilation
 	}
